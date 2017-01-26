@@ -6,7 +6,7 @@ ARCH_FLAGS := -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
 
 LDFLAGS := --static -nostartfiles -L$(LIBOPENCM3_DIR)/lib -T$(LDSCRIPT) -Wl,--gc-sections --specs=rdimon.specs -u printf_float
 
-LDLIBS := -lopencm3_stm32f3 -lm -Wl,--start-group -lc -lgcc -lrdimon -Wl,--end-group
+LDLIBS := -lopencm3_stm32f4 -lm -Wl,--start-group -lc -lgcc -lrdimon -Wl,--end-group
 
 CFLAGS += -std=gnu11 -O3 -ffast-math -g -Wdouble-promotion -Wextra -Wshadow -Wimplicit-function-declaration -Wredundant-decls -Wmissing-prototypes -Wstrict-prototypes -fsingle-precision-constant -fno-common -ffunction-sections -fdata-sections -MD -Wall -Wundef -Isrc -I$(LIBOPENCM3_DIR)/include -DSTM32F4 -DGIT_HASH=0x$(shell git rev-parse --short=8 HEAD)
 
